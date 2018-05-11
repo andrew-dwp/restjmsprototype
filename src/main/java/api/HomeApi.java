@@ -8,12 +8,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@Api(value = "ping", description = "BSP Claim Management", tags = {"Ping"})
+@Api(value = "chuckle", description = "BSP Claim Management", tags = {"Chuckle"})
 public interface HomeApi {
-    @ApiOperation(value = "Ping", notes = "", tags = {"Ping",})
+    @ApiOperation(value = "ToYou", notes = "", tags = {"ToYou",})
     @ApiResponses(value = {@ApiResponse(code = 200, message = "success")})
-    @RequestMapping(value = "/ping",
+    @RequestMapping(value = "/toyou",
             produces = {"test/plain"},
             method = RequestMethod.GET)
-    ResponseEntity<String> ping();
+    ResponseEntity<String> toYou();
+
+    @ApiOperation(value = "ToMe", notes = "", tags = {"ToMe",})
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "success")})
+    @RequestMapping(value = "/tome",
+            produces = {"test/plain"},
+            method = RequestMethod.GET)
+    ResponseEntity<String> toMe();
 }
